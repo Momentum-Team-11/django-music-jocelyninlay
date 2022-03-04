@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">All Albums</h1>
+
+<p><a href="{% url 'add_album' %}">Add New Album</a> </p>
+
+<div class="content">
+{% for album in album %}
+   <div class="box">
+    <h3> {{ album.title }}</h3>
+    <p> by: {{ album.artist }}</p>
+    <p> {{ date_created }}</p>
+    <p> {{ created_at }}</p>
+    <p>
+      <a class= "content is-small" href="{% url 'edit_album' album_pk=album.pk %}">Edit Album</a><br>
+      <a class="red content is-small" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
+    </p>
+</div> <!--end of second one, class w-33-->
+
+  {% endfor %}
+</div> <!-- end of first div flex wrap -->
+{% endblock %}
