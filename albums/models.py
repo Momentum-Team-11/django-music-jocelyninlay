@@ -6,5 +6,5 @@ class Album(models.Model):
     date_created = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(null=True, blank=True)
 
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title

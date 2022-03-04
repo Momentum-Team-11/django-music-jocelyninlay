@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Edit Album</h1>
 
-<div>
+<div class="field">
   <form action="{% url 'edit_album' album_pk=album.pk %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
